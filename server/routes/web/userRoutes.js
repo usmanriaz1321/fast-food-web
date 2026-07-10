@@ -8,7 +8,7 @@ const {
     getUserOrders,
     getUserStats,
     getUserCart
-} = require('../controllers/userController');
+} = require('../controllers/web/userController');
 
 // All routes require authentication
 router.use(auth);

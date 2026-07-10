@@ -12,7 +12,7 @@ const {
     getOrderById,
     getAllMenuItems,
     getAllDeals
-} = require('../controllers/adminController');
+} = require('../controllers/admin/adminController');
 
 // All routes require admin authentication
 router.use(isAdmin);

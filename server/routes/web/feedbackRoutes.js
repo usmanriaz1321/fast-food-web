@@ -8,7 +8,7 @@ const {
     getAllFeedbacks,
     approveFeedback,
     deleteFeedback
-} = require('../controllers/feedbackController');
+} = require('../controllers/web/feedbackController');
 
 // Public Routes
 router.get('/', getFeedbacks);

@@ -8,7 +8,7 @@ const {
     updateDeal,
     deleteDeal,
     toggleDealStatus
-} = require('../controllers/dealController');
+} = require('../controllers/web/dealController');
 
 // Public Routes
 router.get('/', getAllDeals);

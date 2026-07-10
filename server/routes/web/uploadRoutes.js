@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const { isAdmin } = require('../middleware/auth');
-const { uploadImage } = require('../controllers/uploadController');
+const { uploadImage } = require('../controllers/web/uploadController');
 
 // Configure Multer
 const storage = multer.diskStorage({

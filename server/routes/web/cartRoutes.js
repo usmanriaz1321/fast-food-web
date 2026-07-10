@@ -7,7 +7,7 @@ const {
     updateCartItem,
     removeFromCart,
     clearCart
-} = require('../controllers/cartController');
+} = require('../controllers/web/cartController');
 
 router.use(auth);
 

@@ -8,7 +8,7 @@ const {
     updateItem,
     deleteItem,
     toggleItemStatus
-} = require('../controllers/menuController');
+} = require('../controllers/web/menuController');
 
 // Public Routes
 router.get('/', getAllItems);

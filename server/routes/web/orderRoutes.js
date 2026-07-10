@@ -6,7 +6,7 @@ const {
     getOrders,
     getSingleOrder,
     updateOrderStatus
-} = require('../controllers/orderController');
+} = require('../controllers/web/orderController');
 
 // User Routes
 router.use(auth);

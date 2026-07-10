@@ -9,7 +9,7 @@ const {
     changePassword,
     forgotPassword,
     resetPassword
-} = require('../controllers/authController');
+} = require('../controllers/web/authController');
 
 // Public Routes
 router.post('/register', register);

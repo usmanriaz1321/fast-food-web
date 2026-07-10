@@ -1,4 +1,4 @@
-// server/controllers/menuController.js
+// serv../controllers/web/menuController.js
 const MenuItem = require('../models/MenuItem');
 const categorySizes = require('../models/categorySizes');
 

@@ -8,7 +8,7 @@ const {
     updateCategory,
     deleteCategory,
     toggleCategoryStatus
-} = require('../controllers/categoryController');
+} = require('../controllers/web/categoryController');
 
 // Public Routes
 router.get('/', getAllCategories);

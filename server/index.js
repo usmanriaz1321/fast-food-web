@@ -11,10 +11,10 @@ const app = express();
 // ===== MIDDLEWARE =====
 app.use(cors({
     origin: [
-        'http://localhost:3000',
-        'http://localhost:5173',
-        'https://fast-food-web-sigma.vercel.app',
-        'https://*.vercel.app'
+        'http://localhost:8000',
+        'https://https://fast-food-web-ruddy.vercel.app/'
+        
+        
     ],
     credentials: true
 }));
@@ -59,16 +59,16 @@ const loadRoute = (path, routeFile) => {
 };
 
 // Load all routes
-loadRoute('/api/auth', './routes/authRoutes');
-loadRoute('/api/feedback', './routes/feedbackRoutes');
-loadRoute('/api/user', './routes/userRoutes');
-loadRoute('/api/menu', './routes/menuRoutes');
-loadRoute('/api/deals', './routes/dealRoutes');
-loadRoute('/api/orders', './routes/orderRoutes');
-loadRoute('/api/cart', './routes/cartRoutes');
-loadRoute('/api/admin', './routes/adminRoutes');
-loadRoute('/api/upload', './routes/uploadRoutes');
-loadRoute('/api/categories', './routes/categoryRoutes');
+loadRoute('/api/auth', './routes/web/authRoutes');
+loadRoute('/api/feedback', './routes/web/feedbackRoutes');
+loadRoute('/api/user', './routes/web/userRoutes');
+loadRoute('/api/menu', './routes/web/menuRoutes');
+loadRoute('/api/deals', './routes/web/dealRoutes');
+loadRoute('/api/orders', './routes/web/orderRoutes');
+loadRoute('/api/cart', './routes/web/cartRoutes');
+loadRoute('/api/admin', './routes/admin/adminRoutes');
+loadRoute('/api/upload', './routes/web/uploadRoutes');
+loadRoute('/api/categories', './routes/web/categoryRoutes');
 
 // ===== ERROR HANDLING =====
 app.use((err, req, res, next) => {
