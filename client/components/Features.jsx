@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Badge, Button, Spinner } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { categoryAPI } from '../src/api';
 
 const Features = () => {
     const [hoveredCategory, setHoveredCategory] = useState(null);
@@ -23,7 +24,7 @@ const Features = () => {
     const fetchCategories = async () => {
         setLoading(true);
         try {
-            const response = await axios.get('/api/categories');
+            const response = await categoryAPI.getAll();
             if (response.data.status === 1) {
                 setCategories(response.data.data || []);
             }
