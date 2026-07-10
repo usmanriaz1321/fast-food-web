@@ -1,4 +1,4 @@
-const Deal = require('../models/Deal');
+const Deal = require('../../models/Deal');
 
 // ========== GET ALL DEALS ==========
 const getAllDeals = async (req, res) => {

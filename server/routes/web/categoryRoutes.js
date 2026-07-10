@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { auth, isAdmin } = require('../middleware/auth');
+const { auth, isAdmin } = require('../../middleware/auth');
 const {
     getAllCategories,
     getAllCategoriesAdmin,
@@ -8,7 +8,7 @@ const {
     updateCategory,
     deleteCategory,
     toggleCategoryStatus
-} = require('../controllers/web/categoryController');
+} = require('../../controllers/web/categoryController');
 
 // Public Routes
 router.get('/', getAllCategories);

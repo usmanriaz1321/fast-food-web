@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { auth } = require('../middleware/auth');
+const { auth } = require('../../middleware/auth');
 const {
     getProfile,
     updateProfile,
@@ -8,7 +8,7 @@ const {
     getUserOrders,
     getUserStats,
     getUserCart
-} = require('../controllers/web/userController');
+} = require('../../controllers/web/userController');
 
 // All routes require authentication
 router.use(auth);

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { auth, isAdmin } = require('../middleware/auth');
+const { auth, isAdmin } = require('../../middleware/auth');
 const {
     getAllItems,
     getSingleItem,
@@ -8,7 +8,7 @@ const {
     updateItem,
     deleteItem,
     toggleItemStatus
-} = require('../controllers/web/menuController');
+} = require('../../controllers/web/menuController');
 
 // Public Routes
 router.get('/', getAllItems);

@@ -7,80 +7,69 @@ const path = require('path');
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
-// ===== MIDDLEWARE =====
-app.use(cors({
-    origin: [
-        'http://localhost:8000',
-        'https://https://fast-food-web-ruddy.vercel.app/'
-        
-        
-    ],
-    credentials: true
-}));
+// Middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// ===== TEST ROUTES =====
-app.get('/', (req, res) => {
-    res.json({
-        status: 1,
-        message: '🚀 API is running on Vercel!',
-        timestamp: new Date().toISOString()
-    });
-});
+// ========== ROUTES ==========
+// Auth Routes
+app.use('/api/auth', require('./routes/web/authRoutes'));
 
-app.get('/api/health', (req, res) => {
-    res.json({
-        status: 1,
-        server: 'running',
-        message: '✅ Server is healthy',
-        timestamp: new Date().toISOString()
-    });
-});
+//Feadback
+app.use('/api/feedback', require('./routes/web/feedbackRoutes'));
 
-// ===== ROUTES WITH ERROR HANDLING =====
-const loadRoute = (path, routeFile) => {
-    try {
-        app.use(path, require(routeFile));
-        console.log(`✅ Route loaded: ${path}`);
-    } catch (err) {
-        console.error(`❌ Failed to load ${path}:`, err.message);
-        // Create a fallback route
-        app.use(path, (req, res) => {
-            res.status(503).json({
-                status: 0,
-                message: `Route ${path} is currently unavailable`,
-                error: err.message
-            });
+// User Routes
+app.use('/api/user', require('./routes/web/userRoutes'));
+
+// Menu Routes
+app.use('/api/menu', require('./routes/web/menuRoutes'));
+
+// Deal Routes
+app.use('/api/deals', require('./routes/web/dealRoutes'));
+
+// Order Routes
+app.use('/api/orders', require('./routes/web/orderRoutes'));
+
+// Cart Routes
+app.use('/api/cart', require('./routes/web/cartRoutes'));
+
+// Admin Routes
+app.use('/api/admin', require('./routes/admin/adminRoutes'));
+
+// Upload Routes
+app.use('/api/upload', require('./routes/web/uploadRoutes'));
+
+//category Routes
+app.use('/api/categories', require('./routes/web/categoryRoutes'));
+
+// ========== DATABASE CONNECTION ==========
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => {
+        console.log('✅ Connected to MongoDB');
+        app.listen(PORT, () => {
+            console.log(`🚀 Server running on port ${PORT}`);
         });
-    }
-};
+    })
+    .catch((err) => {
+        console.error('❌ MongoDB connection error:', err);
+        process.exit(1);
+    });
 
-// Load all routes
-loadRoute('/api/auth', './routes/web/authRoutes');
-loadRoute('/api/feedback', './routes/web/feedbackRoutes');
-loadRoute('/api/user', './routes/web/userRoutes');
-loadRoute('/api/menu', './routes/web/menuRoutes');
-loadRoute('/api/deals', './routes/web/dealRoutes');
-loadRoute('/api/orders', './routes/web/orderRoutes');
-loadRoute('/api/cart', './routes/web/cartRoutes');
-loadRoute('/api/admin', './routes/admin/adminRoutes');
-loadRoute('/api/upload', './routes/web/uploadRoutes');
-loadRoute('/api/categories', './routes/web/categoryRoutes');
-
-// ===== ERROR HANDLING =====
+// ========== ERROR HANDLING ==========
 app.use((err, req, res, next) => {
-    console.error('❌ Error:', err.message);
+    console.error(err.stack);
     res.status(500).json({
         status: 0,
-        message: 'Internal server error',
-        error: process.env.NODE_ENV === 'production' ? undefined : err.message
+        message: 'Something went wrong!',
+        error: err.message
     });
 });
 
-// ===== 404 =====
+// ========== 404 ==========
 app.use((req, res) => {
     res.status(404).json({
         status: 0,
@@ -88,22 +77,4 @@ app.use((req, res) => {
     });
 });
 
-// ===== ✅ EXPORT FOR VERCEL =====
 module.exports = app;
-
-// ===== LOCAL SERVER =====
-if (require.main === module) {
-    const PORT = process.env.PORT || 8000;
-    
-    mongoose.connect(process.env.MONGODB_URI)
-        .then(() => {
-            console.log('✅ Connected to MongoDB');
-            app.listen(PORT, () => {
-                console.log(`🚀 Server running on port ${PORT}`);
-            });
-        })
-        .catch((err) => {
-            console.error('❌ MongoDB connection error:', err);
-            process.exit(1);
-        });
-}

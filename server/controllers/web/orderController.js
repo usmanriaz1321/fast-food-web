@@ -1,6 +1,6 @@
-const Order = require('../models/Order');
-const Cart = require('../models/Cart');
-const User=require('../models/User');
+const Order = require('../../models/Order');
+const Cart = require('../../models/Cart');
+const User=require('../../models/User');
 
 // ========== PLACE ORDER ==========
 const placeOrder = async (req, res) => {

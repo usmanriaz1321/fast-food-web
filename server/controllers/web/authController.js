@@ -1,5 +1,5 @@
-const User = require('../models/User');
-const OTP = require('../models/OTP'); // ✅ Add this
+const User = require('../../models/User');
+const OTP = require('../../models/OTP'); // ✅ Add this
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');

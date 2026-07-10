@@ -1,6 +1,6 @@
-const User = require('../models/User');
-const Order = require('../models/Order');
-const Cart = require('../models/Cart');
+const User = require('../../models/User');
+const Order = require('../../models/Order');
+const Cart = require('../../models/Cart');
 
 // ========== GET USER PROFILE ==========
 const getProfile = async (req, res) => {
@@ -136,7 +136,7 @@ const getUserStats = async (req, res) => {
 
         // ========== CALCULATE AVERAGE RATING ==========
         // Get user's feedbacks
-        const Feedbacks = require('../models/Feedback');
+        const Feedbacks = require('../../models/Feedback');
         const feedbacks = await Feedbacks.find({ 
             userId: req.userId,
             status: 'approved'

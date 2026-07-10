@@ -1,8 +1,8 @@
-const User = require('../models/User');
-const MenuItem = require('../models/MenuItem');
-const Deal = require('../models/Deal');
-const Order = require('../models/Order');
-const Feedback = require('../models/Feedback');
+const User = require('../../models/User');
+const MenuItem = require('../../models/MenuItem');
+const Deal = require('../../models/Deal');
+const Order = require('../../models/Order');
+const Feedback = require('../../models/Feedback');
 
 
 // ========== GET DASHBOARD STATS ==========

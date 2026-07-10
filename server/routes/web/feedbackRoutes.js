@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { auth, isAdmin } = require('../middleware/auth');
+const { auth, isAdmin } = require('../../middleware/auth');
 const {
     submitFeedback,
     getFeedbacks,
@@ -8,7 +8,7 @@ const {
     getAllFeedbacks,
     approveFeedback,
     deleteFeedback
-} = require('../controllers/web/feedbackController');
+} = require('../../controllers/web/feedbackController');
 
 // Public Routes
 router.get('/', getFeedbacks);

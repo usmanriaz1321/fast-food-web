@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { isAdmin } = require('../middleware/auth');
+const { isAdmin } = require('../../middleware/auth');
 const {
     getStats,
     getAllUsers,
@@ -12,7 +12,7 @@ const {
     getOrderById,
     getAllMenuItems,
     getAllDeals
-} = require('../controllers/admin/adminController');
+} = require('../../controllers/admin/adminController');
 
 // All routes require admin authentication
 router.use(isAdmin);

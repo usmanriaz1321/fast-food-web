@@ -1,4 +1,4 @@
-// serv../controllers/web/uploadController.js
+// serv../../controllers/web/uploadController.js
 const cloudinary = require('cloudinary').v2;
 const fs = require('fs');
 

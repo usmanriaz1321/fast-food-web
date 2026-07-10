@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { auth, isAdmin } = require('../middleware/auth');
+const { auth, isAdmin } = require('../../middleware/auth');
 const {
     getAllDeals,
     getSingleDeal,
@@ -8,7 +8,7 @@ const {
     updateDeal,
     deleteDeal,
     toggleDealStatus
-} = require('../controllers/web/dealController');
+} = require('../../controllers/web/dealController');
 
 // Public Routes
 router.get('/', getAllDeals);
