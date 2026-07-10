@@ -1,9 +1,9 @@
-# 🍔 BiteDash
+# 🍔 bitebash
 
-**BiteDash** (formerly *Flavour Dash*) is a full-stack food delivery web application built for a local restaurant in **Piplan/Harnoli, Pakistan**. It lets customers browse the menu, place orders, and track deliveries in real time — while giving restaurant admins a complete dashboard to manage the entire operation.
+**bitebash** (formerly *Flavour Dash*) is a full-stack food delivery web application built for a local restaurant in **Piplan/Harnoli, Pakistan**. It lets customers browse the menu, place orders, and track deliveries in real time — while giving restaurant admins a complete dashboard to manage the entire operation.
 
-🔗 **Live App:** [bitedash.netlify.app](https://bitedash.netlify.app)
-🔗 **API:** [fast-food-web-ruddy.vercel.app](https://fast-food-web-ruddy.vercel.app)
+🔗 **Live App:** [bitebash.netlify.app](https://bitebash.netlify.app)
+🔗 **API:** [fast-food-web-ruddy.vercel.app](https://fast-food-web-ruddy.vercel.app/)
 
 ---
 
