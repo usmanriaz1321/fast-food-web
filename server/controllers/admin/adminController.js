@@ -1,7 +1,7 @@
-const User = require('../../models/User');
-const MenuItem = require('../../models/MenuItem');
-const Deal = require('../../models/Deal');
-const Order = require('../../models/Order');
+const User = require('../../models/user');
+const MenuItem = require('../../models/menuItem');
+const Deal = require('../../models/deal');
+const Order = require('../../models/order');
 const Feedback = require('../../models/Feedback');
 
 

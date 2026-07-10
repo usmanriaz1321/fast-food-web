@@ -1,5 +1,5 @@
 // serv../../controllers/web/menuController.js
-const MenuItem = require('../../models/MenuItem');
+const MenuItem = require('../../models/menuItem');
 const categorySizes = require('../../models/categorySizes');
 
 // ========== HELPER: Parse sizes from various formats ==========

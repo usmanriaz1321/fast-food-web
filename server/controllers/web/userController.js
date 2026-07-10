@@ -1,6 +1,6 @@
-const User = require('../../models/User');
-const Order = require('../../models/Order');
-const Cart = require('../../models/Cart');
+const User = require('../../models/user');
+const Order = require('../../models/order');
+const Cart = require('../../models/cart');
 
 // ========== GET USER PROFILE ==========
 const getProfile = async (req, res) => {
