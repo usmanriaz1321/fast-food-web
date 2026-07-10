@@ -8,7 +8,8 @@ const {
     updateProfile,
     changePassword,
     forgotPassword,
-    resetPassword
+    resetPassword,
+    verifyOTP
 } = require('../../controllers/web/authController');
 
 // Public Routes
@@ -16,6 +17,7 @@ router.post('/register', register);
 router.post('/login', login);
 router.post('/forgot-password', forgotPassword);
 router.post('/reset-password', resetPassword);
+router.post('/verify-otp', verifyOTP);
 
 // Protected Routes
 router.get('/profile', auth, getProfile);
